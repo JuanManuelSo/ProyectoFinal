@@ -1,0 +1,148 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color: #FBFBFB;
+    width: 100%; 
+    height: 80px;
+    border-bottom: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+}
+
+.header-content{
+    padding: 0 30px 0 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: auto;
+}
+
+.register {
+    position: absolute;
+    color: black;
+    right: 0;
+    margin-right: 2%;
+}
+
+.register i{
+    border-radius:1vh;
+    font-size: 30px;
+    text-align: center;
+}
+
+.register i:hover{
+    color: rgb(59, 152, 219);
+    transition: 250ms;
+}
+
+.contenedorPadre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 80vh;
+    min-height: 500px;
+    min-width: 400px;
+    margin-top: 5%;
+}
+
+.creaTuCuenta{
+    text-align: center;
+    height: 30%;
+}
+
+.creaTuCuenta i{
+    font-size: 13vh;
+    margin-bottom: 10%;
+}
+
+.creaTuCuenta h1{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 3vh;
+    font-weight: 1;
+}
+
+.formulario{
+    margin-top: -1%;
+    width: 70%;
+    height: 100%;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+}
+
+.forms input{
+    border: solid 2px lightslategray;
+    color: lightslategray;
+    font-size: 1.8vh;
+    width: 100%;
+    height: 5vh;
+    margin-bottom: 6%;
+    padding-left: 3%;
+}
+
+.forms input:last-child{
+    margin-bottom: 0%;
+}
+
+.tieneCuenta{
+    margin-top: 3%;
+    height: 30%;
+    padding: 2%;
+    text-align: center;
+}
+
+.botonRegistro{
+    background-color: rgb(59, 152, 219);
+    color: white;
+    font-size: 1.6vh;
+    width: 100%;
+    height: 6vh;
+    border-radius: 1vh;
+    border: none;
+}
+
+.botonRegistro:hover{
+    background-color: rgb(9, 104, 172);
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.tieneCuenta p{
+    font-size: 2.2vh;
+}
+
+.tieneCuenta a{
+    color: rgb(59, 152, 219);
+    text-decoration: none;
+}
+
+.tieneCuenta a:hover{
+    color: rgb(9, 104, 172);
+    text-decoration: underline;
+}
