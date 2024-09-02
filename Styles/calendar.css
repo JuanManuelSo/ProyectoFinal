@@ -67,6 +67,7 @@ aside{
     flex-direction: column;
     align-items: center;
     max-width: 275px;
+    min-width: 157px;
     width: 14.3vw;
     height: 100vh;
     border-right: solid 0.25px;
@@ -105,8 +106,8 @@ aside i{
 
 .calenedar{
     background-color: #F6F6F6;
-    width: 42vw;
-    height: 82vh;
+    width: 39vw;
+    height: 75vh;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
@@ -114,7 +115,7 @@ aside i{
     justify-content: space-around;
     align-items: center;
     border: solid 2px;
-    font-size: 1vw;
+    font-size: 0.75vw;
     overflow-y: auto;
 }
 
@@ -183,11 +184,12 @@ aside i{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 1;
+    font-size: 0.75em;
 }
 
 .tarea-pendiente p:first-child{
     font-size: 2em;
+    font-weight: bold;
 }
 
 .contenido{
@@ -256,7 +258,7 @@ aside i{
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     aside{
         display: none;
