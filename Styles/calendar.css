@@ -230,6 +230,14 @@ aside i{
         height: auto;
     }
 
+    aside a{
+        font-size: 14px;
+    }
+
+    aside i{
+        font-size: 20px;
+    }
+
     .calenedar{
         margin: auto;
         margin-top: 5%;
@@ -245,5 +253,33 @@ aside i{
     .tarea-pendiente{
         width: 80%;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    aside{
+        display: none;
+    }
+
+    .calenedar{
+        width: 80%;
+        height: 55%;
+        font-size: 10px;
+        padding: 5%;
+    }
+
+    .tareas-diarias{
+        width: 100%;
+    }
+
+    .tareas-diarias h4{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .tarea-pendiente{
+        width: 80%;
+        font-size: 10px;
     }
 }
