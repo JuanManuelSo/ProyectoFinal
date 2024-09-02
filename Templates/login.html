@@ -4,37 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/Styles/login.css">
+    <link rel="stylesheet" href="../styles/login.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    
+    
     <script src="https://kit.fontawesome.com/c169e6af85.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <p class="name">H A B I T S</p>
-            <a href="#" class="register"><i class="fa-regular fa-user"></i></a>
+            <a href="/templates/index.html" class="name">H A B I T S</a>
+            <a href="/templates/register.html" class="register"><i class="fa-regular fa-user"></i></a>
         </div>
     </header>
-    <div class="contenedorPadre">
-        <div class="iniciaSesion">
-            <i class="fa-regular fa-user"></i>
-            <h1>Inicia sesion</h1>
+    <section class="login"> <!--Agregado para separar las secciones-->
+        <div class="login-conteiner">
+            <div class="inicia-sesion">
+                <i class="fa-regular fa-user"></i>
+                <p>Inicia sesion</p>
+            </div>
+            <div class="login-forms">
+                <form action="iniciar" class="formulario">
+                    <div class="forms">
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="login-link">
+                        <input type="submit" value="INICIA SESION" class="btn-inicio">
+                        <p>¿No tienes una cuenta creada aun? <a href="../templates/register.html">Registrate</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form action="iniciar" class="formulario">
-            <div class="forms">
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-            </div>
-            <div class="noTieneCuenta">
-                <input type="submit" value="INICIA SESION" class="botonInicio">
-                <p>¿No tienes una cuenta creada aun? <a href="/Templates/register.html">Registrate</a></p>
-            </div>
-        </form>
-    </div>
+        <!-- Cambio en los nombres de las clases para mejor practica -->
+    </section>
+    
 </body>
 </html>

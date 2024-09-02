@@ -1,11 +1,12 @@
 *{
-    font-family: sans-serif;
+    
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
 }
 
 .header {
@@ -33,21 +34,17 @@ body{
     font-family: "Poppins", sans-serif;
     font-size: 30px;
     font-weight: 500;
-    margin: auto;
-}
-
-.register {
-    position: absolute;
+    text-decoration: none;
     color: black;
+}
+.register {
+    position: relative;
     right: 0;
-    margin-right: 2%;
+    color: black;
 }
 
 .register i{
-
-    border-radius:1vh;
     font-size: 30px;
-    text-align: center;
 }
 
 .register i:hover{
@@ -55,34 +52,41 @@ body{
     transition: 250ms;
 }
 
-.contenedorPadre{
+/* Inicio sesion */
+
+.login{
+    height: 800px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-family: "Poppins",sans-serif;
+}
+
+
+.inicia-sesion{
+    text-align: center;
+    
+}
+
+.inicia-sesion i{
+    font-size: 13vh;
+    margin-bottom: 5%;
+}
+
+.inicia-sesion p{
+    font-weight: 500;
+    text-align: center;
+    font-size: 4.5vh;
+    margin-bottom: 5%;
+}
+
+.login-forms{
+    width: 700px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-    height: 80vh;
-    min-height: 500px;
-    min-width: 400px;
-    margin-top: 5%;
 }
 
-.iniciaSesion{
-    text-align: center;
-    height: 30%;
-}
-
-.iniciaSesion i{
-    font-size: 13vh;
-    margin-bottom: 10%;
-}
-
-.iniciaSesion h1{
-    text-align: center;
-    margin-top: 0px;
-    font-size: 3vh;
-    font-weight: 1;
-}
 
 .formulario{
     width: 70%;
@@ -101,24 +105,25 @@ body{
     color: lightslategray;
     font-size: 1.8vh;
     width: 100%;
-    height: 5vh;
+    height: 6.2vh;
     margin-bottom: 13%;
-    padding-left: 3%;
+    padding: 0 0 0 3%;
+    background-color: #F5F5F5;
 }
 
 .forms input:last-child{
     margin-bottom: 0%;
 }
 
-.noTieneCuenta{
+.login-link{
     height: 30%;
     margin-top: 3%;
     padding: 2%;
     text-align: center;
 }
 
-.botonInicio{
-    background-color: rgb(59, 152, 219);
+.btn-inicio{
+    background-color: #7AA3C9;
     color: white;
     font-size: 1.6vh;
     width: 100%;
@@ -127,22 +132,24 @@ body{
     border: none;
 }
 
-.botonInicio:hover{
+
+.btn-inicio:hover{
     background-color: rgb(9, 104, 172);
     transition: 500ms;
     cursor: pointer;
 }
 
-.noTieneCuenta p{
-    font-size: 2.2vh;
+.login-link p{
+    font-size: 1.7vh;
+    margin-top: 1.8%;
 }
 
-.noTieneCuenta a{
+.login-link a{
     color: rgb(59, 152, 219);
     text-decoration: none;
 }
 
-.noTieneCuenta a:hover{
+.login-link a:hover{
     color: rgb(9, 104, 172);
     text-decoration: underline;
 }
