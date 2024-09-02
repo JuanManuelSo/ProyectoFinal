@@ -103,7 +103,7 @@ aside i{
     height: 92vh;
 }
 
-.clanedar{
+.calenedar{
     background-color: #F6F6F6;
     width: 42vw;
     height: 82vh;
@@ -217,4 +217,33 @@ aside i{
     color: rgb(20, 126, 201);
     cursor: pointer;
     transition: 250ms;
+}
+
+@media (max-width: 1100px) {
+
+    .contenedor-padre{
+        flex-direction: column;
+        height: auto;
+    }
+
+    aside{
+        height: auto;
+    }
+
+    .calenedar{
+        margin: auto;
+        margin-top: 5%;
+        width: 85%;
+        border: solid 2px;
+        font-size: 14px;
+    }
+
+    .tareas-diarias{
+        width: 100%;
+    }
+
+    .tarea-pendiente{
+        width: 80%;
+        font-size: 14px;
+    }
 }
