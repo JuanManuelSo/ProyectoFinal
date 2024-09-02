@@ -1,0 +1,220 @@
+*{
+    font-family: sans-serif;
+}
+
+p, h4, h5{
+    font-size: 1.625em;
+}
+
+.header {
+    background-color: #FBFBFB;
+    width: 100%; 
+    height: 80px;
+    border-bottom: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+}
+
+.header-content{
+    padding: 0 30px 0 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: auto;
+}
+
+.register {
+    position: absolute;
+    color: black;
+    right: 0;
+    margin-right: 2%;
+}
+
+.register i{
+
+    border-radius:1vh;
+    font-size: 30px;
+    text-align: center;
+}
+
+.register i:hover{
+    color: rgb(59, 152, 219);
+    transition: 250ms;
+}
+
+.contenedor-padre{
+    display: flex;
+}
+
+main{
+    display: flex;
+}
+
+aside{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 275px;
+    width: 14.3vw;
+    height: 100vh;
+    border-right: solid 0.25px;
+    height: 92vh;
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+aside a:first-child{
+    margin-top: 10%;
+}
+
+aside a:hover{
+    background-color: #D9D9D9;
+    border-radius: 16px;
+    transition: 250ms;
+}
+
+aside i{
+    color: #56A1CC;
+    font-size: 30px;
+}
+
+.contenedor-padre{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 92vh;
+}
+
+.clanedar{
+    background-color: #F6F6F6;
+    width: 42vw;
+    height: 82vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px;
+    font-size: 1vw;
+    overflow-y: auto;
+}
+
+.arriba{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flechas{
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+    font-size: 2em;
+}
+
+.flechas a{
+    text-decoration: none;
+    color: black;
+}
+
+.flechas a:hover{
+    color: #56A1CC;
+    transition: 150ms;
+}
+
+.dias{
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+}
+
+.dias p{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dia:hover{
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.tareas-diarias{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarea-pendiente{
+    background-color: #F6F6F6;
+    border: solid 1px;
+    padding-left: 2%;
+    border-radius: 15px;
+    width: 33.6vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+}
+
+.tarea-pendiente p:first-child{
+    font-size: 2em;
+}
+
+.contenido{
+    width: 85%;
+}
+
+.icons{
+    height: 90%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opciones{
+    font-size: 2em;
+    margin-top: 25%;
+}
+
+.check{
+    color: #56A1CC;
+    font-size: 4em;
+}
+
+.check:hover{
+    color: rgb(20, 126, 201);
+    cursor: pointer;
+    transition: 250ms;
+}
