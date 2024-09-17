@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Tarea</title>
+    <link rel="stylesheet" href="tarea.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">H A B I T S</h1>
+        <div class="header-icono">
+            <a href=""><i class="fa-regular fa-bell"></i></a>
+            <a href="/login.html"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+    <p>Nueva Tarea</p>
+    <main>
+        <div>
+            <form class="main-conteiner">
+                <div class="form-group">
+                    <label for="nombre">Nombre de la tarea:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="form-group fecha">
+                    <label for="fecha">Fecha:</label>
+                    <input type="number" id="dia" name="dia" placeholder="día">/
+                    <input type="number" id="mes" name="mes" placeholder="mes">/
+                    <input type="number" id="año" name="año" placeholder="año"> 
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion">
+                </div>
+                <div class="form-group tiempo">
+                    <div class="tiempo-item">
+                        <label for="empieza">Empieza a las:</label>
+                        <input type="time" id="empieza" name="empieza">
+                    </div>
+                    <div class="tiempo-item">
+                        <label for="termina">Termina a las:</label>
+                        <input type="time" id="termina" name="termina">
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="submit">CREAR TAREA</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
