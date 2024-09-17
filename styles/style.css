@@ -8,6 +8,8 @@ body {
     min-height: 100vh;
 }
 
+
+/* Header */
 .header {
     background-color: #FBFBFB;
     width: 100%; 
@@ -46,6 +48,12 @@ body {
 .register i{
     font-size: 30px;
 }
+
+.register i:hover{
+    color: rgb(59, 152, 219);
+    transition: 250ms;
+}
+
 
 /* Main */
 
