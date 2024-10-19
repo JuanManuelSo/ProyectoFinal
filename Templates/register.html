@@ -17,28 +17,34 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <p class="name">H A B I T S</p>
-            <a href="#" class="register"><i class="fa-regular fa-user"></i></a>
+            <a href="/templates/index.html" class="name">H A B I T S</a>
+            <a href="/templates/register.html" class="register-icon"><i class="fa-regular fa-user"></i></a>
         </div>
     </header>
-    <div class="contenedorPadre">
-        <div class="creaTuCuenta">
-            <i class="fa-regular fa-user"></i>
-            <h1>Crea tu cuenta</h1>
+    <section class="register">
+        <div class="register-conteiner">
+            <div class="crear-cuenta">
+                <i class="fa-regular fa-user"></i>
+                <p>Crea tu cuenta</p>
+            </div>
+            <div class="register-forms">
+                <form action="registro" class="formulario">
+                    <div class="forms">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellido">
+                        <input type="password" placeholder="Contraseña">
+                        <input type="password" placeholder="Repetir Contraseña">
+                    </div>
+                    <div class="register-link">
+                        <input type="submit" value="REGISTRARSE" class="btn-register">
+                        <p>¿Ya tienes una cuenta creada? <a href="../templates/login.html">Inicia sesion</a></p>
+                    </div>
+                </form>
+            </div>
+            
         </div>
-        <form action="registro" class="formulario">
-            <div class="forms">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellido">
-                <input type="password" placeholder="Contraseña">
-                <input type="password" placeholder="Repetir Contraseña">
-            </div>
-            <div class="tieneCuenta">
-                <input type="submit" value="REGISTRARSE" class="botonRegistro">
-                <p>¿Ya tienes una cuenta creada? <a href="/Templates/login.html">Inicia sesion</a></p>
-            </div>
-        </form>
-    </div>
+    </section>
+    
 </body>
 </html>
