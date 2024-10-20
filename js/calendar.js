@@ -127,6 +127,40 @@ function cambioMes(direccion) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const opcionesIcono = document.getElementById('opciones');
+    const modal = document.getElementById('modalEliminarTarea');
+    const cerrarModal = document.querySelector('.cerrar-modal');
+    const confirmarEliminar = document.getElementById('confirmarEliminar');
+    const eliminarTarea = document.getElementById('eliminar-tarea');
+
+    // Mostrar el modal al hacer clic en el ícono de opciones
+    opcionesIcono.onclick = function() {
+        modal.style.display = 'block';
+    };
+
+    // Cerrar el modal al hacer clic en la 'x'
+    cerrarModal.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Cerrar el modal si se hace clic fuera de la ventana modal
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Manejar la eliminación de la tarea
+    confirmarEliminar.onclick = function() {
+        modal.style.display = 'none';
+        eliminarTarea.style.display = 'none';
+    };
+});
+
+document.getElementById('tarea-completada').onclick = function(){
+    document.getElementById('eliminar-tarea').style.display = 'none';
+}
 
 const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -142,7 +176,12 @@ let mes = document.getElementById('mes-calendario');
 mes.innerText = meses[mesActual];
 let divDias = document.getElementsByClassName('dias')[0];
 document.getElementById('mes-tareas').innerText = meses[fechaActual.getMonth()];
-document.getElementById('dia-tareas').innerText = diasSemana[fechaActual.getDay()-1];
+if(fechaActual.getDay()-1 == -1){
+    document.getElementById('dia-tareas').innerText = diasSemana[6]
+}
+else{
+    document.getElementById('dia-tareas').innerText = diasSemana[fechaActual.getDay()-1];
+}
 document.getElementById('diaNro-tareas').innerText = fechaActual.getDate();
 
 /* Escribe los dias de el mes inicial */

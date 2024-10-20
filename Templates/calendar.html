@@ -48,7 +48,7 @@
                     <h4>de</h4>
                     <h4 id="mes-tareas">Agosto</h4>
                 </div>
-                <div class="tarea-pendiente">
+                <div class="tarea-pendiente" id = "eliminar-tarea">
                     <div class="contenido">
                         <p>Hacer la cama</p>
                         <p>Horario: 8:00 am - 9:30 am</p>
@@ -56,10 +56,18 @@
                         <p>Fecha: Sabado 31 de Agosto</p>
                     </div>
                     <div class="icons">
-                        <i class="fa-solid fa-ellipsis-vertical opciones"></i>
-                        <i class="fa-regular fa-square-check check"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" id = "opciones"></i>
+                        <button class="fa-regular fa-square-check check" id = "tarea-completada"></button>
                     </div>
-                </div>
+
+                    <div class="modal" id="modalEliminarTarea" style="display: none;">
+                        <div class="modal-contenido">
+                            <span class="cerrar-modal">&times;</span>
+                            <p>¿Estás seguro de que deseas eliminar esta tarea?</p>
+                            <button id="confirmarEliminar">Eliminar</button>
+                        </div>
+                    </div> 
+                </div>          
             </div>
         </div>
         <script src="../js/calendar.js"></script>

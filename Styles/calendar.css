@@ -233,9 +233,13 @@ button {
     align-items: center;
 }
 
-.opciones{
+#opciones{
     font-size: 2em;
     margin-top: 25%;
+}
+
+#opciones:hover{
+    cursor: pointer;
 }
 
 .check{
@@ -253,6 +257,40 @@ button {
     display: flex;
     gap: 5px;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar-modal:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 @media (max-width: 1100px) {
 
