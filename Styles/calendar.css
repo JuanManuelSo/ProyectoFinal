@@ -171,13 +171,13 @@ button {
     transition: 250ms;
 }
 
-.dia-actual{
+.dia-actual, #dia-seleccionado{
     background-color: #D9D9D9;
     color: #56A1CC;
     border-radius: 8px;
 }
 
-.dia-actual:hover{
+.dia-actual:hover, #dia-seleccionado:hover{
     color: #D9D9D9;
     background-color: #56A1CC;
 }
