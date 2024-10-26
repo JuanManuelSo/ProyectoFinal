@@ -28,23 +28,30 @@
                 <p>Crea tu cuenta</p>
             </div>
             <div class="register-forms">
-                <form action="registro" class="formulario">
+                <form action="registro" class="formulario" id="formulario-login">
                     <div class="forms">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Nombre">
-                        <input type="text" placeholder="Apellido">
-                        <input type="password" placeholder="Contraseña">
-                        <input type="password" placeholder="Repetir Contraseña">
+                        <input type="text" placeholder="Email" id="email" required>
+                        <div class="mensaje-error" id="error-email"></div>
+
+                        <input type="text" placeholder="Nombre" id="nombre" required>
+                        <div class="mensaje-error" id="error-nombre"></div>
+
+                        <input type="text" placeholder="Apellido" id="apellido" required>
+                        <div class="mensaje-error" id="error-apellido"></div>
+
+                        <input type="password" placeholder="Contraseña" id="contrasena" required>
+                        
+                        <input type="password" placeholder="Repetir Contraseña" id="contrasena2" required>
+                        <div class="mensaje-error" id="error-contrasena2"></div>
                     </div>
                     <div class="register-link">
                         <input type="submit" value="REGISTRARSE" class="btn-register">
-                        <p>¿Ya tienes una cuenta creada? <a href="../templates/login.html">Inicia sesion</a></p>
+                        <p>¿Ya tienes una cuenta creada? <a href="../templates/login.html">Inicia sesión</a></p>
                     </div>
                 </form>
             </div>
-            
         </div>
     </section>
-    
+    <script src="/js/register.js"></script>
 </body>
 </html>
