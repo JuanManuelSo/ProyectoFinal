@@ -123,13 +123,13 @@ body{
     font-size: 1.8vh;
     width: 100%;
     height: 5.8vh;
-    margin-bottom: 10%;
+    margin-top: 10%;
     padding: 0 0 0 3%;
     background-color: #F5F5F5;
 }
 
-.forms input:last-child{
-    margin-bottom: 0%;
+.forms input:first-child{
+    margin-top: 0%;
 }
 
 .register-link{
@@ -168,4 +168,9 @@ body{
 .register-link a:hover{
     color: rgb(9, 104, 172);
     text-decoration: underline;
+}
+
+.mensaje-error{
+    color: red;
+    font-size: 14px;
 }
