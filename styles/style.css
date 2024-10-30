@@ -190,8 +190,42 @@ body {
     bottom: 0;
 }
 
-/* Footer */
+/* Contacto */
+.contacto{
+    margin: 3rem 0 4rem 0;
+}
 
+.txt-contact{
+    font-family: "Prompt",sans-serif;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.btn-register{
+    display: block;
+    background-color: #7AA3C9;
+    font-family: "Poppins",sans-serif;
+    color: white;
+    font-weight:500;
+    font-size: 1.8vh;
+    padding: 2rem 5rem 2rem 5rem;
+    border-radius: 1vh;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-register:hover{
+    background-color:rgb(9, 104, 172);;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+
+
+/* Footer */
 footer{
     /* padding: 80px 13% 70px; */
     display: grid;
