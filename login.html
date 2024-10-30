@@ -34,6 +34,8 @@
                 <form action="iniciar" class="formulario" id="formulario">
                     <div class="forms">
                         <input type="text" id="email" name="email" placeholder="Email">
+                        <div class="mensaje-error" id="error-email"></div>
+
                         <input type="password" id="password" name="password" placeholder="Contraseña">
                     </div>
                     <div class="login-link">
@@ -41,13 +43,9 @@
                         
                         <p>¿No tienes una cuenta creada aun? <a href="/templates/register.html">Registrate</a></p>
 
-                        <div class="mensaje_error" id="mensaje-error">
-                            <p>Error: Email y/o contraseña incorrectos!</p>
-                        </div>
+                        <div class="mensaje-error" id="error-login"></div>
 
-                        <div class="mensaje_exito" id="mensaje-exito">
-                            <p>Inicio de Sesión Exitoso!</p>
-                        </div>
+                        <div class="mensaje-exito" id="exito-login"></div>
                     </div>
                 </form>
             </div>
