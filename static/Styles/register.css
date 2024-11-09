@@ -1,0 +1,185 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh
+}
+
+.header {
+    background-color: #FBFBFB;
+    width: 100%; 
+    height: 80px;
+    border-bottom: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+}
+
+.header-content{
+    padding: 0 30px 0 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+
+.register-icon{
+    position: absolute;
+    color: black;
+    right: 0;
+    margin-right: 2%;
+}
+
+.register-icon i{
+    border-radius:1vh;
+    font-size: 30px;
+    text-align: center;
+}
+
+.register-icon i:hover{
+    color: rgb(59, 152, 219);
+    transition: 250ms;
+}
+
+/* Register */
+
+.register{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins",sans-serif;
+}
+
+.register-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 100%;
+    min-height: 500px;
+    min-width: 400px;
+    margin-top: 2%;
+    
+}
+
+.crear-cuenta{
+    text-align: center;
+    height: 30%;
+}
+
+.crear-cuenta i{
+    font-size: 13vh;
+    margin-bottom: 10%;
+}
+
+.crear-cuenta p{
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 3vh;
+    margin-bottom: 5%;
+    
+}
+
+.formulario{
+    margin-top: -1%;
+    width: 70%;
+    height: 100%;
+}
+
+.register-forms{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+}
+
+.forms input{
+    border: solid 2px lightslategray;
+    color: lightslategray;
+    font-size: 1.8vh;
+    width: 100%;
+    height: 5.8vh;
+    margin-top: 10%;
+    padding: 0 0 0 3%;
+    background-color: #F5F5F5;
+}
+
+.forms input:first-child{
+    margin-top: 0%;
+}
+
+.register-link{
+    margin-top: 3%;
+    height: 30%;
+    padding: 2%;
+    text-align: center;
+}
+
+.btn-register{
+    background-color: #7AA3C9;
+    color: white;
+    font-size: 1.6vh;
+    width: 100%;
+    height: 6vh;
+    border-radius: 1vh;
+    border: none;
+}
+
+.btn-register:hover{
+    background-color:rgb(9, 104, 172);;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.register-link p{
+    font-size: 1.7vh;
+    margin-top: 1.8%;
+}
+
+.register-link a{
+    color: rgb(59, 152, 219);
+    text-decoration: none;
+}
+
+.register-link a:hover{
+    color: rgb(9, 104, 172);
+    text-decoration: underline;
+}
+
+.mensaje-error{
+    color: red;
+    font-size: 14px;
+}
+
+.error-register {
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    padding: 10px;
+    border-radius: 2px;
+    display: block;
+}
