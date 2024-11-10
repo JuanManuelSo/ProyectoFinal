@@ -81,6 +81,7 @@ function validarFecha() {
 
   // Validar año
   if (año == null || año == '') {
+    document.getElementById('error-año').style.display = 'none';
     errores++;
   } else {
     if (año < fechaActual.getFullYear()) {
@@ -116,11 +117,11 @@ function validarFecha() {
   if ((dia !== "" && !listaNrosValidos.test(dia)) ||
     (mes !== "" && !listaNrosValidos.test(mes)) ||
     (año !== "" && !listaNrosValidos.test(año))) {
-    document.getElementById('error-año').textContent = 'Los valores de la fecha deben ser numéricos';
-    document.getElementById('error-año').style.display = 'block';
+    document.getElementById('error-general').textContent = 'Los valores de la fecha deben ser numéricos';
+    document.getElementById('error-general').style.display = 'block';
     errores++;
   } else {
-    document.getElementById('error-año').style.display = 'none';
+    document.getElementById('error-general').style.display = 'none';
   }
 
   console.log(errores === 0);
