@@ -12,6 +12,30 @@ formulario.addEventListener("submit", function (e) {
   if (validarFormularioTarea()) {
     formulario.submit();
   } else {
+    if (document.getElementById("nombre").value == "") {
+      document.getElementById("error-nombre").innerText = "El campo nombre no puede ser vacío.";
+      document.getElementById("error-nombre").style.display = "block";
+    }
+    if (document.getElementById("dia").value == "") {
+      document.getElementById("error-dia").innerText = "El campo día no puede ser vacío.";
+      document.getElementById("error-dia").style.display = "block";
+    }
+    if (document.getElementById("mes").value == "") {
+      document.getElementById("error-mes").innerText = "El campo mes no puede ser vacío.";
+      document.getElementById("error-mes").style.display = "block";
+    }
+    if (document.getElementById("año").value == "") {
+      document.getElementById("error-año").innerText = "El campo año no puede ser vacío.";
+      document.getElementById("error-año").style.display = "block";
+    }
+    if (document.getElementById("empieza").value == "") {
+      document.getElementById("error-tiempo").innerText = "El campo empieza no puede ser vacío.";
+      document.getElementById("error-tiempo").style.display = "block";
+    }
+    if (document.getElementById("termina").value == "") {
+      document.getElementById("error-tiempo").innerText = "El campo termina no puede ser vacío.";
+      document.getElementById("error-tiempo").style.display = "block";
+    }
     console.log("Formulario de tarea inválido.");
   }
 });
@@ -121,7 +145,7 @@ function validarTiempo() {
   let terminaHora = new Date("1970-01-01T" + termina + "Z");
 
   if (terminaHora <= empiezaHora) {
-    errorMensaje.textContent = "La hora de 'termina' debe ser después de 'empieza'.";
+    errorMensaje.textContent = "La hora de finalizacion debe ser mayo a la de inicio.";
     errorMensaje.style.display = "block";
     return false;
   }
