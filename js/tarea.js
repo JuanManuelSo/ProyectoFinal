@@ -66,17 +66,6 @@ function validarFecha() {
   let año = document.getElementById("año").value;
   let errores = 0;
 
-  // Validar formato numérico
-  if ((dia !== "" && !listaNrosValidos.test(dia)) ||
-    (mes !== "" && !listaNrosValidos.test(mes)) ||
-    (año !== "" && !listaNrosValidos.test(año))) {
-    document.getElementById('error-año').textContent = 'Los valores de la fecha deben ser numéricos';
-    document.getElementById('error-año').style.display = 'block';
-    errores++;
-  } else {
-    document.getElementById('error-año').style.display = 'none';
-  }
-
   // Determinar días del mes
   if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
     diasMes = 31;
@@ -121,6 +110,17 @@ function validarFecha() {
     errores++;
   } else {
     document.getElementById("error-dia").style.display = "none";
+  }
+
+  // Validar formato numérico
+  if ((dia !== "" && !listaNrosValidos.test(dia)) ||
+    (mes !== "" && !listaNrosValidos.test(mes)) ||
+    (año !== "" && !listaNrosValidos.test(año))) {
+    document.getElementById('error-año').textContent = 'Los valores de la fecha deben ser numéricos';
+    document.getElementById('error-año').style.display = 'block';
+    errores++;
+  } else {
+    document.getElementById('error-año').style.display = 'none';
   }
 
   console.log(errores === 0);
