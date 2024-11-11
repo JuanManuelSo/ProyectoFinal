@@ -6,6 +6,8 @@ document.getElementById("mes").addEventListener("input", validarFecha);
 document.getElementById("año").addEventListener("input", validarFecha);
 document.getElementById("empieza").addEventListener("input", validarTiempo);
 document.getElementById("termina").addEventListener("input", validarTiempo);
+document.getElementById("empieza").addEventListener("input", validarFecha);
+document.getElementById("termina").addEventListener("input", validarFecha);
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -42,13 +44,13 @@ formulario.addEventListener("submit", function (e) {
 
 function validarNombreTarea() {
   const nombre = document.getElementById("nombre").value;
-  const letrasValidas = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/;
+  const letrasValidas = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s0-9]+$/;
 
   if (nombre == null || nombre == '') {
     document.getElementById("error-nombre").style.display = "none";
     return false;
   } else if (!letrasValidas.test(nombre)) {
-    document.getElementById("error-nombre").innerText = "El nombre debe contener únicamente letras válidas (A-Z).";
+    document.getElementById("error-nombre").innerText = "No se permiten caracteres especiales.";
     document.getElementById("error-nombre").style.display = "block";
     return false;
   } else {
@@ -64,6 +66,10 @@ function validarFecha() {
   let dia = document.getElementById("dia").value;
   let mes = document.getElementById("mes").value;
   let año = document.getElementById("año").value;
+  let empieza = document.getElementById("empieza").value;
+  let empiezaHoras = empieza.split(":")[0]; // Obtiene las horas
+  let empiezaMinutos = empieza.split(":")[1]; // Obtiene los minutos
+  let fechaIngresada = 0;
   let errores = 0;
 
   // Determinar días del mes
@@ -80,16 +86,35 @@ function validarFecha() {
   }
 
   // Validar año
-  if (año == null || año == '') {
+  if(empieza != '' && empieza != null){
+    fechaIngresada = new Date(año, mes - 1, dia, empiezaHoras, empiezaMinutos);
+  } else{
+    fechaIngresada = new Date(año, mes - 1, dia);
+  }
+  
+  console.log("-----------------------------------------")
+  console.log("fechaActual: ", fechaActual);
+  console.log("fechaIngresada: ", fechaIngresada);
+  console.log("empieza, termina: ", empiezaHoras, empiezaMinutos);
+  
+  if (año == '' || mes == '' || dia == '') {
     document.getElementById('error-año').style.display = 'none';
     errores++;
+  } else if (fechaIngresada >= fechaActual) {
+    document.getElementById('error-año').style.display = 'none';
   } else {
-    if (año < fechaActual.getFullYear()) {
-      document.getElementById('error-año').textContent = 'El año no puede ser menor que el actual';
+    if (año == fechaActual.getFullYear() && mes-1 == fechaActual.getMonth() && dia == fechaActual.getDate()) {
+      if (empiezaHoras != undefined && empiezaHoras != '' && empiezaMinutos != undefined && empiezaMinutos != '') {
+        document.getElementById('error-año').textContent = 'El horario no puede ser menor o igual que el actual';
+        document.getElementById('error-año').style.display = 'block';
+        errores++;
+      } else {
+        document.getElementById('error-año').style.display = 'none';
+      }
+    } else {
+      document.getElementById('error-año').textContent = 'La fecha no puede ser menor que la actual';
       document.getElementById('error-año').style.display = 'block';
       errores++;
-    } else {
-      document.getElementById('error-año').style.display = 'none';
     }
   }
 
@@ -124,8 +149,8 @@ function validarFecha() {
     document.getElementById('error-general').style.display = 'none';
   }
 
-  console.log(errores === 0);
-  return errores === 0; // Fecha válida
+  console.log(errores == 0);
+  return errores == 0; // Fecha válida
 }
 
 function validarTiempo() {
