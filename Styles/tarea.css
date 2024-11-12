@@ -49,11 +49,11 @@ body p {
     font-family: "Poppins", sans-serif;
 }
 
-.main-conteiner {
+.main-container {
     font-size: 1.3em;
     width: 900px;
-    height: 500px;
-    margin: 20px 0px 40px 0px;
+    height: 550px;
+    margin: 20px 0 20px 0;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -75,12 +75,13 @@ label {
     font-family: "Poppins", sans-serif;
 }
 
-input[type="text"],
-input[type="number"], 
-input[type="time"] {
+/* Estilos generales para inputs de tipo texto y tiempo */
+.text-input,
+.time-input,
+.fecha-input {
     font-family: "Poppins", sans-serif;
     width: calc(100% - 30px);
-    height: 40px;
+    height: 30px;
     padding: 8px;
     margin-right: 20px;
     border: 1px solid rgb(151, 151, 151);
@@ -88,11 +89,9 @@ input[type="time"] {
     font-size: 1em;
 }
 
-input[type="number"] {
+/* Estilo específico para la clase fecha-input */
+.fecha-input {
     text-align: center;
-}
-
-input[type="number"] {
     width: 20%;
 }
 
@@ -109,7 +108,21 @@ input[type="number"] {
 .form-footer {
     text-align: center;
     grid-column: span 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+form .form-footer a {
+    text-decoration: none;
+    color: black;
+    padding-top: 20px;
+}
+
+form .form-footer a:hover {
+    color: blue;
+}
+
 button {
     background-color: #5483d6d8;
     color: white;
@@ -124,4 +137,9 @@ button {
 
 button:hover {
     background-color: rgb(61, 83, 207);
+}
+
+.mensaje-error{
+    color: red;
+    font-size: 14px;
 }
