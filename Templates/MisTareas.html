@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tareas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='Styles/MisTareas.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -21,7 +23,7 @@
                     <p>Configuraciones</p>
                     <a href="{{ url_for('mis_tareas') }}" class="mis-listas"><i class="fa-regular fa-rectangle-list"></i>Mis listas</a></li>
                     
-                    <a href="{{ url_for('calendario') }}" class="mis-listas"><i class="fa-regular fa-calendar-days"></i>Mi calendario</a></li>
+                    <a href="{{ url_for('calendar') }}" class="mis-listas"><i class="fa-regular fa-calendar-days"></i>Mi calendario</a></li>
                 </div>
             
                 <div class="listas">
@@ -42,26 +44,37 @@
                 <p class="mis-tareas">Mis Tareas</p>
                 <a href="#" class="ver-siguiente-mes">ver siguinte mes ></a>
             </div>
-            
-            <div class="tarea-padre">
-                <p class="fecha">Sabado</p>
-                <div class="tarea-padre-2">
-                    <div class="titulo-padre-2"><h5>Tareas</h5></div>
-                    <div class="conteiner-card">
-                        <p class="todas1-titulo">Titulo:</p>
-                        <p class="Editar">Editar</p>
-                        <p class="horario">HORARIO: </p>
-                        <p class="descripcion">Descripcion:</h6>
-                        <div class="tick"><img src="../imagenes/tick.png" width="30px"></div>
+                
+            <div class="row row-col-1 row-cols-sm1 row-cols-md3 row-cols-lg4 mt-3">
+                {% for tarea in tareas %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ tarea.nombre }} <!-- Nombre de la tarea -->
+                        </div>
+                        <div class="card-body">
+                            {{ tarea.descripcion }} <!-- Descripción de la tarea -->
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <p><b>Fecha:</b> {{ tarea.anio }}/{{ tarea.mes }}/{{ tarea.dia }}</p>
+                                <p><b>Empieza:</b> {{ tarea.empieza }} <b>Termina:</b> {{ tarea.termina }}</p>
+                            </div>
+                            <form action="/eliminar_tarea" method="POST">
+                                <input type="hidden" value="{{ tarea.id_tarea }}" name="id">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                            </form>
+                        </div>
                     </div>
-                    <br>
-                    <div class="nuevas-tareas">
-                        <div class="imagen-agregar"><a href="{{ url_for('nueva_tarea') }}"><i class="fa-regular fa-square-plus"></i><h6>agregar nueva tarea</h6></a></div>
-                    </div>
-                </div>    
+                </div>
+                {% endfor %}
             </div>
+                <div class="nuevas-tareas">
+                    <div class="imagen-agregar"><a href="{{ url_for('nueva_tarea') }}"><i class="fa-regular fa-square-plus"></i><h6>agregar nueva tarea</h6></a></div>
+                </div>
         </div>
     </section> 
+
 
    
 

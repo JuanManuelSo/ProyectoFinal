@@ -20,16 +20,21 @@
     <p>Nueva Tarea</p>
     <main>
         <div>
-            <form class="main-conteiner">
+            <form class="main-conteiner" action="/crear_tarea" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre de la tarea:</label>
                     <input type="text" id="nombre" name="nombre">
+                    <p class="mensaje-error" id="error-nombre"></p>
                 </div>
                 <div class="form-group fecha">
                     <label for="fecha">Fecha:</label>
                     <input type="number" id="dia" name="dia" placeholder="día">/
                     <input type="number" id="mes" name="mes" placeholder="mes">/
-                    <input type="number" id="año" name="año" placeholder="año"> 
+                    <input type="number" id="anio" name="anio" placeholder="año"> 
+                    <p class="mensaje-error" id="error-dia"></p>
+                    <p class="mensaje-error" id="error-mes"></p>
+                    <p class="mensaje-error" id="error-año"></p>
+                    <p class="mensaje-error" id="error-general"></p>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
@@ -45,13 +50,16 @@
                         <input type="time" id="termina" name="termina">
                     </div>
                 </div>
+                <p class="mensaje-error" id="error-tiempo"></p>
                 <div class="form-footer">
                     <button type="submit">CREAR TAREA</button>
-                    <a href="{{ url_for('mis_tareas') }}">Volves</a>
+                    <a href="{{ url_for('mis_tareas') }}">Voler</a>
                 </div>
             </form>
+
         </div>
     </main>
 
+    <script src="{{ url_for('static', filename='js/tarea.js') }}"></script>
 </body>
 </html>

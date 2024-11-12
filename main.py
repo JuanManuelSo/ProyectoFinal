@@ -16,23 +16,92 @@ def home():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    if 'logueado' in session and session['logueado'] is True:
+        return redirect(url_for('mostrar_perfil'))
+    else:
+        return render_template('login.html')
+    
 
 @app.route('/register')
 def register():
-    return render_template('register.html')
+    if 'logueado' in session and session['logueado'] is True:
+        return redirect(url_for('mostrar_perfil')) 
+    else:
+        return render_template('register.html')
+    
 
-@app.route('/MisTareas')
+@app.route('/MisTareas', methods=["GET"])
 def mis_tareas():
-    return render_template('MisTareas.html')
+    id_usuario = session['id_usuario']
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM tareas WHERE id_usuario = %s", [id_usuario])   
+    tareas = cur.fetchall()
+    cur.close()
+    
+    return render_template('MisTareas.html', tareas=tareas)
 
 @app.route('/tarea')
 def nueva_tarea():
     return render_template('tarea.html')
 
-#@app.route('/crear_tarea')
-#def crear_tarea():
-#    return render_template('tarea.html')
+@app.route('/calendar')
+def calendar():
+    if 'logueado' in session and session['logueado'] is True:
+        return render_template('calendar.html')  
+    else:
+        return redirect(url_for('login'))
+    
+@app.route('/contacto')
+def contacto():
+    return render_template('contact.html')
+
+@app.route('/perfil')
+def mostrar_perfil():
+    if 'nombre' in session and 'apellido' in session:
+        _gmail = session.get('gmail', '')
+        _nombre = session.get('nombre', '')
+        _apellido = session.get('apellido', '')
+        
+        _nombreCompleto = _nombre + " " + _apellido
+        
+        return render_template('perfil.html', nombreCompleto=_nombreCompleto, nombre=_nombre, apellido=_apellido, gmail=_gmail)
+    else:
+        return redirect(url_for('login'))
+    
+
+@app.route('/crear_tarea', methods=['GET', 'POST'])
+def crear_tarea():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        dia = int(request.form['dia'])
+        mes = int(request.form['mes'])
+        anio = int(request.form['anio'])
+        descripcion = request.form['descripcion']
+        empieza = request.form['empieza']
+        termina = request.form['termina']
+        id_usuario = session['id_usuario']
+        if nombre and dia and mes and anio and descripcion and empieza and termina:
+            cursor = mysql.connection.cursor()
+            query = """
+                    INSERT INTO tareas (id_usuario, nombre, dia, mes, anio, descripcion, empieza, termina)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """
+            cursor.execute(query, (id_usuario, nombre, dia, mes, anio, descripcion, empieza, termina))
+            mysql.connection.commit()
+            cursor.close()
+            return redirect(url_for('mis_tareas')) 
+    return render_template('tarea.html')    
+
+@app.route("/eliminar_tarea", methods=["POST"])
+def eliminarTarea():
+    cur = mysql.connection.cursor()
+    id_tarea = request.form['id']
+    cur.execute("DELETE FROM tareas WHERE id_tarea = %s", (id_tarea,))    
+    mysql.connection.commit()
+    cur.close()
+    return redirect(url_for('mis_tareas'))
+    
+
 
 @app.route('/crear_registro', methods=["GET","POST"])
 def crear_registro():
@@ -54,12 +123,6 @@ def crear_registro():
         return render_template('login.html', mensaje2="usuario registrado exitosamente!")
     
 
-@app.route('/calendar')
-def calendario():
-    if 'logueado' in session and session['logueado'] is True:
-        return render_template('calendar.html')  
-    else:
-        return redirect(url_for('login'))
 
 @app.route('/acceso_login', methods=["GET","POST"])
 def acceso_login():
@@ -75,11 +138,20 @@ def acceso_login():
         if account:
             session['logueado'] = True
             session['id_usuario'] = account['id_usuario']
+            session['gmail'] = account['gmail']
+            session['nombre'] = account['nombre']
+            session['apellido'] = account['apellido']
             
-            return render_template('calendar.html')
+            cur.close()
+            return redirect(url_for('calendar'))
         else:
             return render_template('login.html', mensaje="usuario incorrecto")
-      
+        
+@app.route('/logout')
+def logout():
+    session.clear()
+    session['logueado'] = False
+    return redirect(url_for('login'))      
 
 if __name__ == '__main__':
     app.secret_key="chululu"
