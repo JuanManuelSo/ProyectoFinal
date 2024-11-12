@@ -11,31 +11,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../Styles/contact.css">
+    
+    <link rel="stylesheet" href=../static/styles/contact.css>
 </head>
 <body>
-    <h1>En que podemos ayudarte?</h1>
-    <div class="container">
-    <p>Comunicate con nosotros mediante estos medios.</p>
-    <ul>
-        <li>Escribinos por whatsapp: +54 3471 239510</li>
-        <li>Llamanos al: +54 11551238</li>
-        <li>Podes escribirnos al mail <a href="asdasdad@gmail.com">aqui</a>, o escribirlo en la caslla de abajo</li>
-    </ul>
+    <header class="header">
+        <div class="header-content">
+            <a href="/templates/index.html" class="name">H A B I T S</a>
+            <a href="/templates/register.html" class="register"><i class="fa-regular fa-user"></i></a>
+            <a href="/templates/calendar.html" class="calendar"><i class="fa-solid fa-calendar-days"></i></a>
 
-    <form method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="email">Correo Electronico:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-        
-        <button type="submit">Enviar</button>
-    </form>
-    </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="encabezado">
+            <p>¿EN QUE PODEMOS AYUDARTE?</p>
+        </div>
+        <div class="container">
+            <p>Comunicate con nosotros mediante estos medios:</p>
+            <ul class="lista-contacto">
+                <li>Escribinos por Whatsapp al <a href="#">+54 3471 239510</a></li>
+                <li>Llamanos al +54 11551238</li>
+                <li>Podes escribirnos al mail <a href="asdasdad@gmail.com">aqui</a>, o escribirlo en la caslla de abajo</li>
+            </ul>
+        </div>
+        <div class="container-forms">
+            <p>COMPLETA EL FORMULARIO PARA ENVIARNOS UN MAIL</p>
+            <form clas="forms" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Correo Electronico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="email">Asunto:</label>
+                <input type="text" id="text" name="text" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </form>
+            <button class="btn-enviar" type="submit">Enviar</button>
+        </div>
+    </main>
+    
+
+    <script src="https://kit.fontawesome.com/b36a603077.js" crossorigin="anonymous"></script>
 </body>
 </html>
