@@ -51,7 +51,7 @@
                     evitar la sobrecarga de trabajo. </p>
             </div>      
             <div class="info-image">
-                <img src="../static/Images/imagen1.png" alt="imagen de personas">
+                <img src="{{ url_for('static', filename='Images/imagen1.png') }}" alt="imagen de personas">
             </div>
         </div>
         <div class="info-content" data-aos="fade-left">
@@ -60,7 +60,7 @@
                 <p class="info-extra">Al planificar con antelación, puedes prever obstáculos y preparar soluciones antes de que se conviertan en problemas. </p>
             </div>      
             <div class="info-image">
-                <img src="../static/Images/imagen2.png" alt="imagen de personas">
+                <img src="{{ url_for('static', filename='Images/imagen.png') }}" alt="imagen de personas">
             </div>
         </div>
         <div class="info-content" data-aos="fade-right">
@@ -69,12 +69,12 @@
                 <p class="info-extra">Identificar y gestionar prioridades es esencial para enfocarte en las tareas que tienen el mayor impacto. </p>
             </div>      
             <div class="info-image">
-                <img src="../static/Images/imagen3.png"alt="imagen de personas">
+                <img src="{{ url_for('static', filename='Images/imagen3.png') }}"alt="imagen de personas">
             </div>
         </div>
         <div class="contacto">
             <p class="txt-contact">¿Necesitas hablarnos?</p>
-            <a class="btn-register" href="contact.html">CONTACTARSE</a>
+            <a class="btn-register" href="{{ url_for('contacto') }}">CONTACTARSE</a>
         </div>
     </section>
 
@@ -96,7 +96,7 @@
             <h4>Ayuda</h4>
             <li><a href="#">Preguntas Frecuentes</a></li>
             <li><a href="#">Cambios</a></li>
-            <li><a href="contact.html" target="_blank">Contactanos</a></li>
+            <li><a href="{{ url_for('contacto') }}" target="_blank">Contactanos</a></li>
         </div>
        
         <div class="icons">
