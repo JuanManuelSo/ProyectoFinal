@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/Styles/perfil.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/c169e6af85.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="{{ url_for('calendar') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg>
+            </a>
+            <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
+            <a href="{{ url_for('login') }}" class="register"><i class="fa-regular fa-user"></i></a>
+            <a href="{{ url_for('logout') }}">Cerrar Sesion</a>
+        </div>
+    </header>
+
+    <div class="container">    
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <h4 >Perfil de Usuario</h4> <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil editar"></i></a></div>
+                <div class="panel-body">
+                <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <img alt="User Pic" src="/static/Images/avatar.png" id="profile-image1" class="img-circle img-responsive"> 
+           
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                <div class="container" >
+                    {% if nombreCompleto %}
+                    <h2>
+                        {{ nombreCompleto }}
+                    </h2>
+                    {% endif %}
+                </div>
+
+                    <hr>
+                        <ul class="container details" >
+                            <li><p><span class="glyphicon one" style="width:50px;"></span>Nombre: {{ nombre }}</p></li>
+                            <li><p><span class="glyphicon one" style="width:50px;"></span>Apellido: {{ apellido }}</p></li>
+                            <li><p><span class="glyphicon one" style="width:50px;"></span>Gmail: {{ gmail }}</p></li>
+                            <li><p><span class="glyphicon one" style="width:50px;"></span>Telefono: </p></li>
+                            <li><p><span class="glyphicon one" style="width:50px;"></span>Descripcion: </p></li>
+                        </ul>
+                    <hr>
+            </div>
+        </div>
+    </div>
+
+                <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Perfil</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar Cambioss</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

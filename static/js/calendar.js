@@ -188,4 +188,10 @@ document.getElementById('diaNro-tareas').innerText = fechaActual.getDate();
 escribirDias(mesActual, anioActual);
 /* Llama a la funcion "cambioMes" */
 document.getElementById('flecha-izq-calendar').onclick = function() { cambioMes('izq'); };
+
 document.getElementById('flecha-der-calendar').onclick = function() { cambioMes('der'); };
+
+// Llamar a esta función luego de escribir los días en el calendario
+escribirDias(mesActual, anioActual);
+resaltarDiasConTareas();
+

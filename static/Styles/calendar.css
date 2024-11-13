@@ -84,11 +84,10 @@ aside{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 275px;
+    width: 280px;
     min-width: 157px;
-    width: 15vw;
     border-right: solid 0.25px;
-    height: 92vh;
+    padding: 15px;
 }
 
 aside a{
@@ -97,7 +96,7 @@ aside a{
     text-decoration: none;
     color: black;
     width: 84%;
-    height: 20px;
+    height: 40px;
     justify-content: start;
     align-items: center;
     font-size: 0.7vw;
@@ -105,17 +104,74 @@ aside a{
     padding: 15px;
 }
 
-aside a:first-child{
-    margin-top: 10%;
+.configuraciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-aside a:hover{
-    background-color: #D9D9D9;
-    transition: 250ms;
+.configuraciones p{
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1em;
 }
 
-aside i{
+.configuraciones a{
+    font-weight: 500;
+    width: 200px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.configuraciones a:first-child{
+    margin-bottom: 20px;
+}
+
+.configuraciones a:hover{
+  background-color: #DBDBDB;
+  transition: 250ms;
+}
+
+.fa-calendar-days{
     color: #56A1CC;
+    margin-right: 8px;
+}
+
+.fa-rectangle-list{
+    color: #56A1CC;
+    margin-right: 8px;
+}
+
+
+.listas p{
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.listas li{
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
+.fechas-destacadas p{
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 1em;
+
+}
+
+.tarea-padre {
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    padding: 20px;
 }
 
 .contenedor-padre{

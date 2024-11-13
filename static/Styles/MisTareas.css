@@ -54,6 +54,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    
 }
 /* ASIDE */
 .aside{
@@ -61,10 +62,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 275px;
-  min-width: 157px;
+  width: 240px;
   border-right: solid 0.25px;
   height: 92vh;
+}
+
+.aside a{
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  justify-content: start;
+  align-items: center;
+  color: black;
+  height: 40px;
 }
 
 .configuraciones{
@@ -109,7 +119,7 @@
 
 .listas{
     font-weight: 600;
-    font-size: 2.2vh;
+    font-size: 1em;
 }
 
 .listas ul{
@@ -118,15 +128,14 @@
 
 .listas li{
     font-weight: 400;
-    font-size: 2vh;
-    margin-left: 30px;
+    font-size: 1em;
 }
 
 
 .fechas-destacadas{
     margin-top: 50px;
     font-weight: 600;
-    font-size: 2.2vh;
+    font-size: 1em;
 
 }
 
@@ -143,11 +152,6 @@
     width: 99%;
     align-items: center;
     justify-content: space-between;
-}
-.mis-tareas{
-   font-size: 2.4vh;
-   font-weight: 600;
-   display: flex;
 }
 
 .ver-siguiente-mes{
@@ -182,26 +186,19 @@
     text-align: center;
     padding: 5%;
     border-radius: 15px;
-    border: 2px solid blue;
-    background-color: #f1f1f1;
 }
  
 
 /* MAIN */
 
 .main-conteiner{
+  padding-left: 20px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 60px;
     flex-grow: 8;
     flex-basis: 0;
-}
-
-.main-text{
-    display: flex;
-    margin: 10px 0 10px 0;
 }
 
 .todas1-titulo{

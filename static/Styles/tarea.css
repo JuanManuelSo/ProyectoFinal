@@ -42,6 +42,22 @@ header {
     cursor: pointer;
 }
 
+.name {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    text-decoration: none;
+    color: black;
+}
+
+.name:hover {
+    text-decoration: none;
+    color: black;
+}
+
 body p {
     font-weight: bold;
     padding-top: 20px;
@@ -49,10 +65,10 @@ body p {
     font-family: "Poppins", sans-serif;
 }
 
-.main-container {
+.main-conteiner {
     font-size: 1.3em;
     width: 900px;
-    height: 550px;
+    height: 580px;
     margin: 20px 0 20px 0;
     padding: 20px;
     border: 1px solid #ddd;
@@ -75,13 +91,13 @@ label {
     font-family: "Poppins", sans-serif;
 }
 
-/* Estilos generales para inputs de tipo texto y tiempo */
-.text-input,
-.time-input,
-.fecha-input {
+
+input[type="text"],
+input[type="number"], 
+input[type="time"] {
     font-family: "Poppins", sans-serif;
     width: calc(100% - 30px);
-    height: 30px;
+    height: 40px;
     padding: 8px;
     margin-right: 20px;
     border: 1px solid rgb(151, 151, 151);
@@ -89,9 +105,12 @@ label {
     font-size: 1em;
 }
 
-/* Estilo específico para la clase fecha-input */
-.fecha-input {
+
+input[type="number"] {
     text-align: center;
+}
+
+input[type="number"] {
     width: 20%;
 }
 
