@@ -5,8 +5,7 @@
     font-family: "Poppins",sans-serif;
 }
 
-
-.aside, .main {
+.main {
     flex-grow: 1;
     flex-basis: 100%;
     padding: 20px;
@@ -19,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: solid 1px;
 }
   
 .header-content {
@@ -49,28 +49,32 @@
     font-size: 30px;
 }
 
-
 /* Siguiente */
 .container-estructura {
     width: 100%;
     height: 100%;
     display: flex;
+    
 }
 /* ASIDE */
 .aside{
-    box-shadow: 3px 0px 5px grey;
-    flex-grow: 1;
-    flex-basis: 0;
-} 
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  border-right: solid 0.25px;
+  height: 92vh;
+}
 
-.aside-contenido{
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-    margin-left: 10px;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFF;
+.aside a{
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  justify-content: start;
+  align-items: center;
+  color: black;
+  height: 40px;
 }
 
 .configuraciones{
@@ -100,6 +104,7 @@
 
 .configuraciones a:hover{
   background-color: #DBDBDB;
+  transition: 250ms;
 }
 
 .fa-calendar-days{
@@ -114,7 +119,7 @@
 
 .listas{
     font-weight: 600;
-    font-size: 2.2vh;
+    font-size: 1em;
 }
 
 .listas ul{
@@ -123,15 +128,14 @@
 
 .listas li{
     font-weight: 400;
-    font-size: 2vh;
-    margin-left: 30px;
+    font-size: 1em;
 }
 
 
 .fechas-destacadas{
     margin-top: 50px;
     font-weight: 600;
-    font-size: 2.2vh;
+    font-size: 1em;
 
 }
 
@@ -148,11 +152,6 @@
     width: 99%;
     align-items: center;
     justify-content: space-between;
-}
-.mis-tareas{
-   font-size: 2.4vh;
-   font-weight: 600;
-   display: flex;
 }
 
 .ver-siguiente-mes{
@@ -187,25 +186,19 @@
     text-align: center;
     padding: 5%;
     border-radius: 15px;
-    height: 50px;
 }
  
 
 /* MAIN */
 
 .main-conteiner{
+  padding-left: 20px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 60px;
     flex-grow: 8;
     flex-basis: 0;
-}
-
-.main-text{
-    display: flex;
-    margin: 10px 0 10px 0;
 }
 
 .todas1-titulo{
@@ -233,6 +226,7 @@
     font-weight: 300;
     font-size: 2.2vh;
 }
+
 
    /*@media only screen and (max-width: 600px) {
     .container-estructura {

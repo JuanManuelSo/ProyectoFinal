@@ -28,17 +28,6 @@ def register():
         return redirect(url_for('mostrar_perfil')) 
     else:
         return render_template('register.html')
-    
-
-@app.route('/MisTareas', methods=["GET"])
-def mis_tareas():
-    id_usuario = session['id_usuario']
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM tareas WHERE id_usuario = %s", [id_usuario])   
-    tareas = cur.fetchall()
-    cur.close()
-    
-    return render_template('MisTareas.html', tareas=tareas)
 
 @app.route('/tarea')
 def nueva_tarea():
@@ -47,7 +36,14 @@ def nueva_tarea():
 @app.route('/calendar')
 def calendar():
     if 'logueado' in session and session['logueado'] is True:
-        return render_template('calendar.html')  
+        
+        id_usuario = session['id_usuario']
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM tareas WHERE id_usuario = %s", [id_usuario])   
+        tareas = cur.fetchall()
+        cur.close()
+        
+        return render_template('calendar.html', tareas=tareas)
     else:
         return redirect(url_for('login'))
     
@@ -80,6 +76,7 @@ def crear_tarea():
         empieza = request.form['empieza']
         termina = request.form['termina']
         id_usuario = session['id_usuario']
+        
         if nombre and dia and mes and anio and descripcion and empieza and termina:
             cursor = mysql.connection.cursor()
             query = """
@@ -90,7 +87,19 @@ def crear_tarea():
             mysql.connection.commit()
             cursor.close()
             return redirect(url_for('mis_tareas')) 
+        
     return render_template('tarea.html')    
+
+@app.route('/MisTareas', methods=["GET"])
+def mis_tareas():
+    id_usuario = session['id_usuario']
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM tareas WHERE id_usuario = %s", [id_usuario])   
+    tareas = cur.fetchall()
+    cur.close()
+    
+    return render_template('MisTareas.html', tareas=tareas)
+
 
 @app.route("/eliminar_tarea", methods=["POST"])
 def eliminarTarea():
@@ -105,7 +114,6 @@ def eliminarTarea():
 
 @app.route('/crear_registro', methods=["GET","POST"])
 def crear_registro():
-    
     _nombre = request.form['nombre']
     _apellido = request.form['apellido']
     _gmail = request.form['gmail']

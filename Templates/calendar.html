@@ -13,13 +13,33 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a class="name" herf="{{ url_for('home') }}" class="name">H A B I T S</a>
+            <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
             <a href="{{ url_for('register') }}" class="register"><i class="fa-regular fa-user"></i></a>
         </div>
     </header>
     <main>
-        <aside>
-            <a href="{{ url_for('mis_tareas') }}"><p><i class="fa-solid fa-list"></i> Mis listas</p></a>
+        <aside class="aside">
+            <div class="aside-contenido">
+                <div class="configuraciones">
+                    <p>Configuraciones</p>
+                    <a href="{{ url_for('mis_tareas') }}" class="mis-listas"><i class="fa-regular fa-rectangle-list"></i>Mis listas</a></li>
+                    
+                    <a href="{{ url_for('calendar') }}" class="mis-listas"><i class="fa-regular fa-calendar-days"></i>Mi calendario</a></li>
+                </div>
+            
+                <div class="listas">
+                    <p>Tareas</p>
+                    <ul>
+                        {% for tarea in tareas %}
+                        <li>{{ tarea.nombre }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+           
+                <div class="fechas-destacadas">
+                    <p>Tareas Destacadas</p>
+                </div>
+            </div>
         </aside>
         <div class="contenedor-padre">
             <div class="calenedar">

@@ -47,6 +47,13 @@ body{
     font-size: 30px;
     font-weight: 500;
     margin: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.name:hover {
+    text-decoration: none;
+    color: black;
 }
 
 .register {

@@ -19,7 +19,10 @@
     <header class="header">
         <div class="header-content">
             <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
-            <a href="{{ url_for('login') }}" class="register"><i class="fa-regular fa-user"></i></a>
+            <div>
+                <a href="{{ url_for('calendar') }}" class="calendar"><i class="fa-solid fa-calendar-days"></i></a>
+                <a href="{{ url_for('login') }}" class="register"><i class="fa-regular fa-user"></i></a>
+            </div>
         </div>
     </header>
     <main class="main">
@@ -69,7 +72,10 @@
                 <img src="{{ url_for('static', filename='Images/imagen3.png') }}" alt="imagen de personas">
             </div>
         </div>
-
+        <div class="contacto">
+            <p class="txt-contact">¿Necesitas hablarnos?</p>
+            <a class="btn-register" href="{{ url_for('contacto') }}">CONTACTARSE</a>
+        </div>
     </section>
 
     <footer class="footer">

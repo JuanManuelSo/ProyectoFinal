@@ -40,9 +40,8 @@ body {
 
 
 .register {
-    position: relative;
-    right: 0;
     color: black;
+    margin-left: 10px;
 }
 
 .register i{
@@ -289,4 +288,9 @@ footer{
 .copy a{
     color: #000000;
    
+}
+
+.calendar {
+    font-size: 25px;
+    margin-right: 20px;
 }
