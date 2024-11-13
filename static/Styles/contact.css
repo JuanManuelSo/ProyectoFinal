@@ -1,8 +1,13 @@
 * {
+<<<<<<< HEAD
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+=======
+
+    font-family: sans-serif;
+>>>>>>> 6c74119cb8b2cdc4f006aa4cbfcc3e696935c358
 }
 
 body {
@@ -117,7 +122,12 @@ label{
 input[type="text"],
 input[type="email"],
 textarea {
+<<<<<<< HEAD
     width: 800px;
+=======
+    width: 80%;
+
+>>>>>>> 6c74119cb8b2cdc4f006aa4cbfcc3e696935c358
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -148,8 +158,16 @@ input{
     border-radius:10px;
 }
 
+<<<<<<< HEAD
 .btn-enviar:hover {
     background-color: rgb(59, 152, 219);
     transition: 500ms;
     cursor: pointer;
 }
+=======
+
+input:hover {
+    background-color: #ddd;
+}
+
+>>>>>>> 6c74119cb8b2cdc4f006aa4cbfcc3e696935c358

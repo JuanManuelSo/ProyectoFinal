@@ -57,6 +57,7 @@ body{
 
 .login{
     height: 600px;
+
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -102,8 +103,10 @@ body{
 }
 
 .forms input{
+
     border: solid 3px lightslategray;
     border-radius: 5px;
+
     color: lightslategray;
     font-size: 1.8vh;
     width: 100%;
@@ -123,6 +126,7 @@ body{
     padding: 2%;
     text-align: center;
 }
+
 
 .mensaje_error {
     font-weight: bold;
@@ -153,6 +157,7 @@ body{
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.7);
 }
+
 
 .btn-inicio{
     background-color: #7AA3C9;

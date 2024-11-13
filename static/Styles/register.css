@@ -173,6 +173,7 @@ body{
 .mensaje-error{
     color: red;
     font-size: 14px;
+
 }
 
 .error-register {
@@ -182,4 +183,5 @@ body{
     padding: 10px;
     border-radius: 2px;
     display: block;
+
 }
