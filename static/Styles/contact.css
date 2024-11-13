@@ -1,123 +1,34 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+
+    font-family: sans-serif;
 }
 
-body {
-    min-height: 100vh;
-}
-
-/* Header */
-.header {
-    background-color: #FBFBFB;
-    width: 100%; 
-    height: 80px;
-    border-bottom: solid 1px black;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.header-content{
-    padding: 0 30px 0 30px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between ; 
-    align-items: center; 
-}
-
-
-.name {
-    
-    font-size: 30px;
-    font-weight: 500;
-    text-decoration: none;
-    color: black;
-}
-
-
-.register {
-    position: relative;
-    right: 0;
-    color: black;
-}
-
-.register i{
-    font-size: 30px;
-}
-
-.register i:hover{
-    color: rgb(59, 152, 219);
-    transition: 250ms;
-}
-
-.calendar {
-    position: absolute;
-    right: 0;
-    margin-right: 100px;
-    color: black;
-}
-
-.calendar i{
-    font-size: 30px;
-}
-
-.calendar i:hover{
-    color: rgb(59, 152, 219);
-    transition: 250ms;
-}
-
-/* Main */
-
-.encabezado {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: 500;
-    margin-left: 40px;
-}
 
 .container {
+    align-items: center;
+    border: solid, black;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    
 }
 
-.container p{
-    margin-left: 40px;
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
-
-.lista-contacto{
-    margin-left: 80px;
-    list-style-type: none;
-}
-
-.container-forms{
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
-    
-}
-
-.container-forms p{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-label{
-    display: flex;
-}
-
 
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 800px;
+    width: 80%;
+
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -139,18 +50,14 @@ input{
     background-color: #F5F5F5;
 }
 
-.btn-enviar{
-    display: flex;
-    justify-content: center;
-    width: 800px;
-    padding: 10px;
-    border: none;
-    border-radius:10px;
-}
-
-.btn-enviar:hover {
-    background-color: rgb(59, 152, 219);
+button:hover {
+    background-color: rgb(9, 104, 172);
     transition: 500ms;
     cursor: pointer;
+}
+
+
+input:hover {
+    background-color: #ddd;
 }
 

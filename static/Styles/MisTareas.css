@@ -5,10 +5,14 @@
     font-family: "Poppins",sans-serif;
 }
 
-body {
-  min-height: 100vh;
+
+
+.aside, .main {
+    flex-grow: 1;
+    flex-basis: 100%;
+    padding: 20px;
+} 
   
-}
 
 .header {
     background-color: #F6F6F6;
@@ -188,8 +192,8 @@ body {
     text-align: center;
     padding: 5%;
     border-radius: 15px;
-    border: 2px solid blue;
-    background-color: #f1f1f1;
+
+    height: 50px;
 }
  
 
@@ -205,7 +209,6 @@ body {
     flex-basis: 0;
 }
 
-
 .main-text{
     display: flex;
     margin: 10px 0 10px 0;
@@ -215,10 +218,12 @@ body {
   font-size: 2rem;
 }
 
+
 .todas1-titulo{
     font-weight: 600;
     font-size: 2.2vh;
 }
+
 
 .titulo-padre-2{
   font-size: 1.8rem;

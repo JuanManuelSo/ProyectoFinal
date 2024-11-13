@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Tarea</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/tarea.css') }}">
-    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/tarea.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +23,7 @@
             <form class="main-conteiner" action="/crear_tarea" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre de la tarea:</label>
-                    <input type="text" id="nombre" name="nombre" class="text-input">
+                    <input type="text" id="nombre" name="nombre">
                     <p class="mensaje-error" id="error-nombre"></p>
                 </div>
                 <div class="form-group fecha">
@@ -31,29 +31,37 @@
                     <input type="number" id="dia" name="dia" placeholder="día">/
                     <input type="number" id="mes" name="mes" placeholder="mes">/
                     <input type="number" id="anio" name="anio" placeholder="año"> 
+                    <p class="mensaje-error" id="error-dia"></p>
+                    <p class="mensaje-error" id="error-mes"></p>
+                    <p class="mensaje-error" id="error-año"></p>
+                    <p class="mensaje-error" id="error-general"></p>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion" class="text-input">
+                    <input type="text" id="descripcion" name="descripcion">
+
                 </div>
                 <div class="form-group tiempo">
                     <div class="tiempo-item">
                         <label for="empieza">Empieza a las:</label>
-                        <input type="time" id="empieza" name="empieza" class="time-input">
+
+                        <input type="time" id="empieza" name="empieza">
                     </div>
                     <div class="tiempo-item">
                         <label for="termina">Termina a las:</label>
-                        <input type="time" id="termina" name="termina" class="time-input">
+                        <input type="time" id="termina" name="termina">
                     </div>
                 </div>
                 <p class="mensaje-error" id="error-tiempo"></p>
                 <div class="form-footer">
                     <button type="submit">CREAR TAREA</button>
-                    <a href="{{ url_for('mis_tareas') }}">Volver</a>
+                    <a href="{{ url_for('mis_tareas') }}">Voler</a>
                 </div>
             </form>
+
         </div>
-        <script src="../js/tarea.js"></script>
     </main>
+
+    <script src="{{ url_for('static', filename='js/tarea.js') }}"></script>
 </body>
 </html>

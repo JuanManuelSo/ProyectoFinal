@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../styles/login.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/login.css') }}">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +22,8 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="/templates/index.html" class="name">H A B I T S</a>
-            <a href="/templates/register.html" class="register"><i class="fa-regular fa-user"></i></a>
+            <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
+            <a href="{{ url_for('register') }}" class="register"><i class="fa-regular fa-user"></i></a>
         </div>
     </header>
     <section class="login"> <!--Agregado para separar las secciones-->
@@ -31,20 +33,40 @@
                 <p>Inicia sesion</p>
             </div>
             <div class="login-forms">
-                <form action="iniciar" class="formulario">
+                <form action="acceso_login" class="formulario" id="formulario" method="post">
                     <div class="forms">
-                        <input type="text" placeholder="Email">
-                        <input type="password" placeholder="Contraseña">
+                        <input type="text" id="gmail" name="gmail" placeholder="Gmail">
+                        <div class="campo-error" id="error-gmail"></div>
+                        <input type="password" id="password" name="password" placeholder="Contraseña">
                     </div>
                     <div class="login-link">
-                        <input type="submit" value="INICIA SESION" class="btn-inicio">
-                        <p>¿No tienes una cuenta creada aun? <a href="../templates/register.html">Registrate</a></p>
+                        <button type="submit" class="btn-inicio">INICIA SESION</button>
+                        
+                        <p>¿No tienes una cuenta creada aun? <a href="{{ url_for('register') }}">Registrate</a></p>
+
+                        <div class="mensaje_error" id="mensaje">
+                            {% if mensaje %}
+                            <p>
+                                {{ mensaje }}
+                            </p>
+                            {% endif %}   
+                        </div>
+                        <div class="mensaje_exito">
+                            {% if mensaje2 %}
+                            <p>
+                                {{ mensaje2 }}
+                            </p>
+                            {% endif %}                                
+                        </div>
+
                     </div>
                 </form>
             </div>
         </div>
         <!-- Cambio en los nombres de las clases para mejor practica -->
     </section>
-    
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
 </body>
 </html>

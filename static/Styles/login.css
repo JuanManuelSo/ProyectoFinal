@@ -1,5 +1,4 @@
 *{
-    
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -57,7 +56,8 @@ body{
 /* Inicio sesion */
 
 .login{
-    height: 800px;
+    height: 600px;
+
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -103,7 +103,10 @@ body{
 }
 
 .forms input{
-    border: solid 2px lightslategray;
+
+    border: solid 3px lightslategray;
+    border-radius: 5px;
+
     color: lightslategray;
     font-size: 1.8vh;
     width: 100%;
@@ -123,6 +126,38 @@ body{
     padding: 2%;
     text-align: center;
 }
+
+
+.mensaje_error {
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+    border-radius: 2px;
+    display: block;
+}
+
+.mensaje_exito {
+    font-weight: bold;
+    color: rgb(155, 247, 18);
+    padding: 10px;
+    border-radius: 2px;
+    display: block;
+}
+
+.campo-error{
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: -50px;
+    margin-bottom: 47px;
+}
+
+.formulario input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.7);
+}
+
 
 .btn-inicio{
     background-color: #7AA3C9;
