@@ -18,9 +18,11 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="/templates/index.html" class="name">H A B I T S</a>
-            <a href="/templates/register.html" class="register"><i class="fa-regular fa-user"></i></a>
-            <a href="/templates/calendar.html" class="calendar"><i class="fa-solid fa-calendar-days"></i></a>
+            <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
+            <div>
+                <a href="{{ url_for('calendar') }}" class="calendar"><i class="fa-solid fa-calendar-days"></i></a>
+                <a href="{{ url_for('register') }}" class="register"><i class="fa-regular fa-user"></i></a>
+            </div>
         </div>
     </header>
     <main class="main">
@@ -72,7 +74,7 @@
         </div>
         <div class="contacto">
             <p class="txt-contact">¿Necesitas hablarnos?</p>
-            <a class="btn-register" href="{{ url_for('contacto') }}">CONTACTARSE</a>
+            <a class="btn-register" href="contact.html">CONTACTARSE</a>
         </div>
     </section>
 
@@ -93,8 +95,8 @@
         <div class="footer-content">
             <h4>Ayuda</h4>
             <li><a href="#">Preguntas Frecuentes</a></li>
-            <li><a href="#"></a></li>
-            <li><a href="{{ url_for('contacto') }}">Contactanos</a></li>
+            <li><a href="#">Cambios</a></li>
+            <li><a href="contact.html" target="_blank">Contactanos</a></li>
         </div>
        
         <div class="icons">
