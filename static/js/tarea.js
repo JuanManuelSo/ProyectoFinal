@@ -4,10 +4,12 @@ document.getElementById("nombre").addEventListener("input", validarNombreTarea);
 document.getElementById("dia").addEventListener("input", validarFecha);
 document.getElementById("mes").addEventListener("input", validarFecha);
 document.getElementById("año").addEventListener("input", validarFecha);
+document.getElementById("descripcion").addEventListener("input", validarDescripcion);
 document.getElementById("empieza").addEventListener("input", validarTiempo);
 document.getElementById("termina").addEventListener("input", validarTiempo);
 document.getElementById("empieza").addEventListener("input", validarFecha);
 document.getElementById("termina").addEventListener("input", validarFecha);
+
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -29,6 +31,10 @@ formulario.addEventListener("submit", function (e) {
     if (document.getElementById("año").value == "") {
       document.getElementById("error-año").innerText = "El campo año no puede ser vacío.";
       document.getElementById("error-año").style.display = "block";
+    }
+    if (document.getElementById("descripcion").value == "") {
+      document.getElementById("descripcion-error").innerText = "la descripcion no puede ser vacía.";
+      document.getElementById("descripcion-error").style.display = "block";
     }
     if (document.getElementById("empieza").value == "") {
       document.getElementById("error-tiempo").innerText = "El campo empieza no puede ser vacío.";
@@ -153,6 +159,17 @@ function validarFecha() {
   return errores == 0; // Fecha válida
 }
 
+function validarDescripcion() {
+  let descripcion = document.getElementById("descripcion").value;
+  let errorDescripcion = document.getElementById("descripcion-error");
+  if (descripcion == '' || descripcion == null) {
+    return false
+  } else {
+    errorDescripcion.style.display = 'none';
+    return true
+  }
+}
+
 function validarTiempo() {
   let empieza = document.getElementById("empieza").value;
   let termina = document.getElementById("termina").value;
@@ -183,7 +200,8 @@ function validarTiempo() {
 function validarFormularioTarea() {
   const nombreTareaValido = validarNombreTarea();
   const fechaValida = validarFecha();
+  const descripcionValida = validarDescripcion();
   const tiempoValido = validarTiempo();
 
-  return nombreTareaValido && fechaValida && tiempoValido;
+  return nombreTareaValido && fechaValida && tiempoValido && descripcionValida;
 }

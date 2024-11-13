@@ -20,7 +20,7 @@
     <p>Nueva Tarea</p>
     <main>
         <div>
-            <form class="main-conteiner" action="/crear_tarea" method="POST">
+            <form class="main-conteiner" id="form-container" action="/crear_tarea" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre de la tarea:</label>
                     <input type="text" id="nombre" name="nombre">
@@ -30,7 +30,7 @@
                     <label for="fecha">Fecha:</label>
                     <input type="number" id="dia" name="dia" placeholder="día">/
                     <input type="number" id="mes" name="mes" placeholder="mes">/
-                    <input type="number" id="anio" name="anio" placeholder="año"> 
+                    <input type="number" id="año" name="anio" placeholder="año"> 
                     <p class="mensaje-error" id="error-dia"></p>
                     <p class="mensaje-error" id="error-mes"></p>
                     <p class="mensaje-error" id="error-año"></p>
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
                     <input type="text" id="descripcion" name="descripcion">
-
+                    <p class="mensaje-error" id="descripcion-error"></p>
                 </div>
                 <div class="form-group tiempo">
                     <div class="tiempo-item">

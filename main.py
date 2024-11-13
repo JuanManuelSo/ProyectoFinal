@@ -3,9 +3,9 @@ from flask_mysqldb import MySQL, MySQLdb
 
 app = Flask(__name__,template_folder='Templates')
 
-app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_HOST']='127.0.0.1'
 app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']='chululu'
+app.config['MYSQL_PASSWORD']='qqqq'
 app.config['MYSQL_DB']='login'
 app.config['MYSQL_CURSORCLASS']='DictCursor'
 mysql=MySQL(app)
@@ -138,7 +138,6 @@ def acceso_login():
     if request.method == 'POST' and 'gmail' in request.form and 'password' in request.form:
         _gmail = request.form['gmail']
         _password = request.form['password']
-        
         cur=mysql.connection.cursor()
         cur.execute('SELECT * FROM usuarios WHERE gmail = %s AND contraseña = %s', (_gmail, _password,))
         account = cur.fetchone()
