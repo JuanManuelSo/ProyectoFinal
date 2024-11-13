@@ -37,24 +37,26 @@
         </div>
         <div class="container-forms">
             <p>COMPLETA EL FORMULARIO PARA ENVIARNOS UN MAIL</p>
-            <form clas="forms" method="post">
+            <form id="formulario-contact" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
+                <div class="mensaje-error" id="error-nombre"></div>
                 
                 <label for="email">Correo Electronico:</label>
                 <input type="email" id="email" name="email" required>
-
-                <label for="email">Asunto:</label>
-                <input type="text" id="text" name="text" required>
-                
+                <div class="mensaje-error" id="error-email"></div>
+        
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                <div class="mensaje-error" id="error-mensaje"></div>
+        
+                <button type="submit" class="btn-enviar">Enviar</button>
             </form>
-            <button class="btn-enviar" type="submit">Enviar</button>
+            </div>
         </div>
     </main>
     
-
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
     <script src="https://kit.fontawesome.com/b36a603077.js" crossorigin="anonymous"></script>
 </body>
 </html>

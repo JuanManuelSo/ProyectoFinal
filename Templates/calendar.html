@@ -14,13 +14,10 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="{{ url_for('home') }}" class="name">H A B I T S</a>
-
             <a class="name" herf="{{ url_for('home') }}" class="name">H A B I T S</a>
+
             <a href="{{ url_for('register') }}" class="register"><i class="fa-regular fa-user"></i></a>
             <a href="/templates/calendar.html" class="calendar"><i class="fa-solid fa-calendar-days"></i></a>
-
-
         </div>
     </header>
     <main>
@@ -101,7 +98,6 @@
         </div>
 
         <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
-        <div class="fechas" data-variable="{{ fechas }}" id="var_fechas"></div>
     </main>
 </body>
 </html>

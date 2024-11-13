@@ -49,7 +49,7 @@ body {
 }
 
 .register i:hover{
-    color: rgb(59, 152, 219);
+    color: #7AA3C9;
     transition: 250ms;
 }
 
@@ -189,6 +189,30 @@ body {
     bottom: 0;
 }
 
+.contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contacto a{
+    text-decoration: none;
+    color: white;
+}
+.btn-register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 16vw;
+    height: 9vh;
+    background-color: #7AA3C9;
+}
+.btn-register:hover{
+    background-color: rgb(9, 104, 172);
+    transition: 500ms;
+}
+
 
 /* Footer */
 
@@ -295,4 +319,5 @@ footer{
 .calendar {
     font-size: 25px;
     margin-right: 20px;
+    color: #7AA3C9;
 }

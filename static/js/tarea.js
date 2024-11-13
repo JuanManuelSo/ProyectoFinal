@@ -4,10 +4,21 @@ document.getElementById("nombre").addEventListener("input", validarNombreTarea);
 document.getElementById("dia").addEventListener("input", validarFecha);
 document.getElementById("mes").addEventListener("input", validarFecha);
 document.getElementById("año").addEventListener("input", validarFecha);
+document.getElementById("descripcion").addEventListener("input", validarDescripcion);
 document.getElementById("empieza").addEventListener("input", validarTiempo);
 document.getElementById("termina").addEventListener("input", validarTiempo);
 document.getElementById("empieza").addEventListener("input", validarFecha);
 document.getElementById("termina").addEventListener("input", validarFecha);
+
+document.getElementById("nombre").addEventListener("blur", validarNombreTarea);
+document.getElementById("dia").addEventListener("blur", validarFecha);
+document.getElementById("mes").addEventListener("blur", validarFecha);
+document.getElementById("año").addEventListener("blur", validarFecha);
+document.getElementById("descripcion").addEventListener("blur", validarDescripcion);
+document.getElementById("empieza").addEventListener("blur", validarTiempo);
+document.getElementById("termina").addEventListener("blur", validarTiempo);
+document.getElementById("empieza").addEventListener("blur", validarFecha);
+document.getElementById("termina").addEventListener("blur", validarFecha);
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -30,6 +41,10 @@ formulario.addEventListener("submit", function (e) {
       document.getElementById("error-año").innerText = "El campo año no puede ser vacío.";
       document.getElementById("error-año").style.display = "block";
     }
+    if (document.getElementById("descripcion").value == "") {
+      document.getElementById("descripcion-error").innerText = "la descripcion no puede ser vacía.";
+      document.getElementById("descripcion-error").style.display = "block";
+    }
     if (document.getElementById("empieza").value == "") {
       document.getElementById("error-tiempo").innerText = "El campo empieza no puede ser vacío.";
       document.getElementById("error-tiempo").style.display = "block";
@@ -47,7 +62,8 @@ function validarNombreTarea() {
   const letrasValidas = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s0-9]+$/;
 
   if (nombre == null || nombre == '') {
-    document.getElementById("error-nombre").style.display = "none";
+    document.getElementById("error-nombre").style.display = "block";
+    document.getElementById("error-nombre").innerText = "El campo no puede estar vacio.";
     return false;
   } else if (!letrasValidas.test(nombre)) {
     document.getElementById("error-nombre").innerText = "No se permiten caracteres especiales.";
@@ -153,6 +169,19 @@ function validarFecha() {
   return errores == 0; // Fecha válida
 }
 
+function validarDescripcion() {
+  let descripcion = document.getElementById("descripcion").value;
+  let errorDescripcion = document.getElementById("descripcion-error");
+  if (descripcion == '' || descripcion == null) {
+    document.getElementById('descripcion-error').textContent = 'el campo no puede estar vacio';
+    document.getElementById('descripcion-error').style.display = 'block';
+    return false
+  } else {
+    errorDescripcion.style.display = 'none';
+    return true
+  }
+}
+
 function validarTiempo() {
   let empieza = document.getElementById("empieza").value;
   let termina = document.getElementById("termina").value;
@@ -184,6 +213,7 @@ function validarFormularioTarea() {
   const nombreTareaValido = validarNombreTarea();
   const fechaValida = validarFecha();
   const tiempoValido = validarTiempo();
+  const descripcionValida = validarDescripcion();
 
-  return nombreTareaValido && fechaValida && tiempoValido;
+  return nombreTareaValido && fechaValida && tiempoValido && descripcionValida;
 }
