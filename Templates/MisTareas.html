@@ -27,14 +27,16 @@
                 </div>
             
                 <div class="listas">
-                    <p>Listas</p>
+                    <p>Tareas</p>
                     <ul>
-                        <li>Nombre lista 1</li>
+                        {% for tarea in tareas %}
+                        <li>{{ tarea.nombre }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
            
                 <div class="fechas-destacadas">
-                    <p>Fechas Destacadas</p>
+                    <p>Tareas Destacadas</p>
                 </div>
             </div>
         </aside>
@@ -42,7 +44,6 @@
         <div class="main-conteiner">
             <div class="main-text">
                 <p class="mis-tareas">Mis Tareas</p>
-                <a href="#" class="ver-siguiente-mes">ver siguinte mes ></a>
             </div>
                 
             <div class="row row-col-1 row-cols-sm1 row-cols-md3 row-cols-lg4 mt-3">

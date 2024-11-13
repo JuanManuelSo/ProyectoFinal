@@ -32,6 +32,16 @@ body{
     justify-content: space-between;
 }
 
+.panel-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.editar {
+    font-size: 2em;
+    margin-right: 5px;
+}
+
 .name {
     font-family: "Poppins", sans-serif;
     font-size: 30px;

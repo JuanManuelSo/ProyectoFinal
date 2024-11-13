@@ -177,6 +177,10 @@ button {
     transition: 250ms;
 }
 
+.dia-con-tarea{
+    color: #3235e6;
+}
+
 .dia-actual, #dia-seleccionado{
     background-color: #D9D9D9;
     color: #56A1CC;
