@@ -25,7 +25,7 @@ body {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between ; 
+    
     align-items: center; 
 }
 
@@ -40,9 +40,10 @@ body {
 
 
 .register {
-    position: relative;
+    position: absolute;
     right: 0;
     color: black;
+    margin-right: 20px;
 }
 
 .register i{
@@ -53,6 +54,25 @@ body {
     color: rgb(59, 152, 219);
     transition: 250ms;
 }
+
+
+
+.calendar {
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+    color: black;
+}
+
+.calendar i{
+    font-size: 30px;
+}
+
+.calendar i:hover{
+    color: rgb(59, 152, 219);
+    transition: 250ms;
+}
+
 
 
 /* Main */
@@ -144,7 +164,8 @@ body {
 
 .info-content{
     display: flex;
-    border: 1px solid #3A3A3A;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     width: 1000px;
     height: 600;
     margin: 10px 0 100px 0;
@@ -189,8 +210,42 @@ body {
     bottom: 0;
 }
 
-/* Footer */
+/* Contacto */
+.contacto{
+    margin: 3rem 0 4rem 0;
+}
 
+.txt-contact{
+    font-family: "Prompt",sans-serif;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.btn-register{
+    display: block;
+    background-color: #7AA3C9;
+    font-family: "Poppins",sans-serif;
+    color: white;
+    font-weight:500;
+    font-size: 1.8vh;
+    padding: 2rem 5rem 2rem 5rem;
+    border-radius: 1vh;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-register:hover{
+    background-color:rgb(9, 104, 172);;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+
+
+/* Footer */
 footer{
     /* padding: 80px 13% 70px; */
     display: grid;
