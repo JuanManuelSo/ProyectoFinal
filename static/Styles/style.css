@@ -17,7 +17,9 @@ body {
     border-bottom: solid 1px black;
     display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    position: fixed;
+    z-index: 1;
 }
 
 .header-content{
@@ -25,7 +27,6 @@ body {
     position: relative;
     width: 100%;
     display: flex;
-    
     align-items: center; 
 }
 
@@ -36,6 +37,24 @@ body {
     font-weight: 500;
     text-decoration: none;
     color: black;
+}
+
+.button-login{
+    background-color: #7AA3C9;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+    color: white;
+    font-size: 2vh;
+    font-family: "Poppins",sans-serif;
+    padding: 10px;
+    border-radius: 1vh;
+}
+
+.button-login:hover{
+    background-color:rgb(9, 104, 172);
+    transition: 500ms;
+    cursor: pointer;
 }
 
 
@@ -54,26 +73,6 @@ body {
     color: rgb(59, 152, 219);
     transition: 250ms;
 }
-
-
-
-.calendar {
-    position: absolute;
-    right: 0;
-    margin-right: 100px;
-    color: black;
-}
-
-.calendar i{
-    font-size: 30px;
-}
-
-.calendar i:hover{
-    color: rgb(59, 152, 219);
-    transition: 250ms;
-}
-
-
 
 /* Main */
 
@@ -238,7 +237,7 @@ body {
 }
 
 .btn-register:hover{
-    background-color:rgb(9, 104, 172);;
+    background-color:rgb(9, 104, 172);
     transition: 500ms;
     cursor: pointer;
 }

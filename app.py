@@ -6,7 +6,7 @@ from datetime import time
 app = Flask(__name__,template_folder='Templates')
 
 
-app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_HOST']='127.0.0.1'
 app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD']='LEONguruciaga162'
 app.config['MYSQL_DB']='login'
