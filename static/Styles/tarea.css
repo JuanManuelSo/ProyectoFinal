@@ -75,6 +75,7 @@ label {
     font-family: "Poppins", sans-serif;
 }
 
+
 input[type="text"],
 input[type="number"], 
 input[type="time"] {
@@ -87,6 +88,7 @@ input[type="time"] {
     border-radius: 3px;
     font-size: 1em;
 }
+
 
 input[type="number"] {
     text-align: center;
